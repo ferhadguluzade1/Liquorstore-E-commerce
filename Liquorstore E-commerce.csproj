@@ -7,4 +7,25 @@
     <RootNamespace>Liquorstore_E_commerce</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Areas\Admin\ViewModels\Product\UpdateProductViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Areas\Admin\ViewModels\Product\UpdateProductViewModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\LiquorStore\Controllers\" />
+    <Folder Include="Areas\LiquorStore\Data\" />
+    <Folder Include="Areas\LiquorStore\Models\" />
+    <Folder Include="Areas\LiquorStore\Views\" />
+    <Folder Include="wwwroot\Admin\" />
+    <Folder Include="wwwroot\Upload\Product\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.11" />
+  </ItemGroup>
+
 </Project>
