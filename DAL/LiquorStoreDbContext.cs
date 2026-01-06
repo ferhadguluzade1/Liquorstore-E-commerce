@@ -4,11 +4,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Liquorstore_E_commerce.DAL
 {
-    public class LiquorStoreDbContext : Controller
+    public class LiquorStoreDbContext : DbContext
     {
-        public IActionResult Index()
+        public LiquorStoreDbContext(DbContextOptions<LiquorStoreDbContext> options) : base(options)
         {
-            return View();
         }
     }
 }
