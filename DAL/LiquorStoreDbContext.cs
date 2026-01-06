@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Liquorstore_E_commerce.Models;
+using Microsoft.EntityFrameworkCore;
+//using Microsoft.AspNetCore.Mvc;
 
 namespace Liquorstore_E_commerce.DAL
 {

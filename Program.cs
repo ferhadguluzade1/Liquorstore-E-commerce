@@ -1,15 +1,23 @@
-namespace Liquorstore_E_commerce
+using Liquorstore_E_commerce.DAL;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<LiquorStoreDbContext>(options =>
 {
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
-            var builder = WebApplication.CreateBuilder(args);
-            var app = builder.Build();
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+var app = builder.Build();
 
-            app.MapGet("/", () => "Hello World!");
+app.UseStaticFiles();
 
-            app.Run();
-        }
-    }
-}
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}"
+    );
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+app.Run();
