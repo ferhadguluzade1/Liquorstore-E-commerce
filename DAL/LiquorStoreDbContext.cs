@@ -6,8 +6,7 @@ namespace Liquorstore_E_commerce.DAL
 {
     public class LiquorStoreDbContext : DbContext
     {
-        public LiquorStoreDbContext(DbContextOptions<LiquorStoreDbContext> options) : base(options)
-        {
-        }
+        public LiquorStoreDbContext(DbContextOptions<LiquorStoreDbContext> options):base(options){}
+        public DbSet<Product> Products { get; set; }
     }
 }

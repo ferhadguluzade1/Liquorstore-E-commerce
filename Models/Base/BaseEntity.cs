@@ -1,12 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace Liquorstore_E_commerce.Models.Base
+﻿namespace Liquorstore_E_commerce.Models.Base
 {
-    public class BaseEntity : Controller
+    public class BaseEntity
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+        public int Id { get; set; }
+        public bool IsDeleted { get; set; } = false;
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }
