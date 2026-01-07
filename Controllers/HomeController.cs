@@ -6,7 +6,7 @@ namespace Liquorstore_E_commerce.Controllers
 {
     public class HomeController : Controller
     {
-        LiquorStoreDbContext _context;
+        private readonly LiquorStoreDbContext _context;
         public HomeController(LiquorStoreDbContext context)
         {
             _context = context;
@@ -14,7 +14,14 @@ namespace Liquorstore_E_commerce.Controllers
         public IActionResult Index()
         {
             List<Product> products = _context.Products.ToList();
+            
             return View(products);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            return View(product);
         }
     }
 }
