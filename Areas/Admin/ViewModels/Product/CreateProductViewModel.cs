@@ -4,6 +4,7 @@ namespace Liquorstore_E_commerce.Areas.Admin.ViewModels.Product
 {
     public class CreateProductViewModel
     {
+        public required string ProductName { get; set; }
         public required string ProductImageUrl { get; set; }
 
      
@@ -15,7 +16,7 @@ namespace Liquorstore_E_commerce.Areas.Admin.ViewModels.Product
         public required Brand Brand { get; set; }
 
 
-        public ICollection<Category> Categories { get; set; } = new List<Category>();
+        public ICollection<Category> Categories { get; set; } = [];
 
 
     }

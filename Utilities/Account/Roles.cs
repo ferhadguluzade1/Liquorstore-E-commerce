@@ -1,6 +1,9 @@
 ﻿namespace Liquorstore_E_commerce.Utilities.Account
 {
-    public class Roles
+    public enum Roles
     {
+        Admin,
+        SuperAdmin,
+        User
     }
 }

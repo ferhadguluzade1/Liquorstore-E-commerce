@@ -4,6 +4,7 @@ using Liquorstore_E_commerce.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Liquorstore_E_commerce.Migrations
 {
     [DbContext(typeof(LiquorStoreDbContext))]
-    partial class LiquorStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260108000008_AddBrandRelation")]
+    partial class AddBrandRelation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

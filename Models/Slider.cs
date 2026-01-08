@@ -1,6 +1,31 @@
-﻿namespace Liquorstore_E_commerce.Models
+﻿using Liquorstore_E_commerce.Models.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Liquorstore_E_commerce.Models
 {
-    public class Slider
+    public class Slider : BaseEntity
     {
+        [Required(ErrorMessage = "Name is required")]
+        [
+            StringLength(50, ErrorMessage = "Maximum length must be 50"),
+            MinLength(3, ErrorMessage = "Minimum length must be 3")
+        ]
+        public string Name { get; set; }
+        public string? Image { get; set; }
+
+        [NotMapped]
+        public IFormFile ImageFile { get; set; }
+
+        [Required(ErrorMessage = "Description is required")]
+        [
+            StringLength(500, ErrorMessage = "Maximum length must be 500"),
+            MinLength(10, ErrorMessage = "Minimum length must be 10")
+        ]
+        public string Description { get; set; }
+
+        [Required(ErrorMessage = "Discount rate is required")]
+        [Range(0, 100, ErrorMessage = "Discount rate must be between 0 and 100")]
+        public int DiscountRate { get; set; }
     }
 }

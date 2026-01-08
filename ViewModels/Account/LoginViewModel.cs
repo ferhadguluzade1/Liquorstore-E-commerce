@@ -1,6 +1,11 @@
-﻿namespace Liquorstore_E_commerce.ViewModels.Account
+﻿using System.ComponentModel.DataAnnotations;
+namespace Liquorstore_E_commerce.ViewModels.Account
 {
-    public class LoginViewModel
+    public record LoginViewModel
     {
+        [Required, EmailAddress]
+        public string Email { get; set; }
+        [Required, DataType(DataType.Password)]
+        public string Password { get; set; }
     }
 }
